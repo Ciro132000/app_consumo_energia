@@ -1,3 +1,5 @@
+import 'package:app_consumo_energia/config/theme/app_theme.dart';
+import 'package:app_consumo_energia/presentation/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,11 +12,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'App Consumo de energía',
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(child: Text('APP_CONSUMO_ENERGIA')),
+      theme: AppTheme(selectedColor: 1).getTheme(),
+      home: const Scaffold(
+        body: LoginScreen(),
+        // body: Center(child: Text('APP_CONSUMO_ENERGIA')),
       ),
     );
   }
