@@ -1,8 +1,11 @@
 import 'package:app_consumo_energia/config/theme/app_theme.dart';
 import 'package:app_consumo_energia/presentation/screens/login/login_backgroun.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatelessWidget {
+  static const String nameRoute = 'login_screen';
+
   const LoginScreen({super.key});
 
   @override
@@ -25,26 +28,22 @@ class LoginScreen extends StatelessWidget {
             Text(
               'Una aplicación para ahorra',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 40,
-                color: colorList[2]
-              ),
+              style: TextStyle(fontSize: 40, color: colorList[2]),
             ),
             const SizedBox(
               height: 70,
             ),
             FilledButton(
-              onPressed: () {}, 
-              child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 110),
-                child: Text(
-                  'Ingresar',
-                  style: TextStyle(
-                    fontSize: 20
+                onPressed: () {
+                  context.push('/home');
+                },
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 110),
+                  child: Text(
+                    'Ingresar',
+                    style: TextStyle(fontSize: 20),
                   ),
-                ),
-              )
-            ),
+                )),
             const SizedBox(
               height: 15,
             ),
@@ -53,19 +52,14 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Text(
                   '¿No tienes una cuenta?',
-                  style: TextStyle(
-                    color: colorList.last
-                  ),
+                  style: TextStyle(color: colorList.last),
                 ),
                 TextButton(
-                  onPressed: () {}, 
-                  child: Text(
-                    'Registrate',
-                    style: TextStyle(
-                      color: colorList[4]
-                    ),
-                  )
-                )
+                    onPressed: () {},
+                    child: Text(
+                      'Registrate',
+                      style: TextStyle(color: colorList[4]),
+                    ))
               ],
             )
           ],
